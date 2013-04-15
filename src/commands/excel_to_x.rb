@@ -512,7 +512,7 @@ class ExcelToX
   def replace_formulae_with_their_results
     4.times do 
       replace_indirects
-      replace_formulae_with_calculated_values
+      #replace_formulae_with_calculated_values
       replace_references_to_values_with_values
     end
   end
