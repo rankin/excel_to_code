@@ -15,7 +15,7 @@ class NamedReferences
     sheet = sheet.downcase
     named_reference = named_reference.downcase
     if @named_references.has_key?(sheet)
-      @named_references[sheet][named_reference] || @named_references[""][named_reference] || [:error, "#NAME?"]
+      @named_references[sheet][named_reference] || (@named_references[""] ? @named_references[""][named_reference] : nil) || [:error, "#NAME?"]
     else
       @named_references[""][named_reference] || [:error, "#NAME?"]
     end
